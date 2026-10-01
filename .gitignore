@@ -1,0 +1,10 @@
+# data (download from Kaggle, do not commit)
+Base.csv
+*.csv.zip
+# cached CV results and the export archive
+results/*.joblib
+results.zip
+# IDE / Python
+.idea/
+__pycache__/
+.ipynb_checkpoints/

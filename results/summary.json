@@ -1,0 +1,197 @@
+{
+  "quick_test": false,
+  "dataset": {
+    "name": "Bank Account Fraud (BAF) NeurIPS 2022 - Base.csv",
+    "kaggle": "sgpjesus/bank-account-fraud-dataset-neurips-2022",
+    "rows": 1000000,
+    "columns": 32,
+    "fraud_cases": 11029,
+    "fraud_rate": 0.01103
+  },
+  "sample": {
+    "rows": 100000,
+    "fraud_cases": 1103,
+    "fraud_rate": 0.01103,
+    "knn_rows": 30000
+  },
+  "features": {
+    "input": 29,
+    "numeric": 24,
+    "categorical": 5,
+    "dropped": [
+      "device_fraud_count",
+      "month"
+    ],
+    "missing_sentinel_cols": [
+      "prev_address_months_count",
+      "current_address_months_count",
+      "intended_balcon_amount",
+      "bank_months_count",
+      "session_length_in_minutes",
+      "device_distinct_emails_8w"
+    ]
+  },
+  "cv": "StratifiedKFold(n_splits=10, shuffle=True, random_state=42)",
+  "ranking_by_pr_auc": [
+    "AdaBoost",
+    "Gradient Boosting",
+    "LightGBM",
+    "CatBoost",
+    "Ridge (RidgeClassifier)",
+    "HistGradientBoosting",
+    "Lasso (LogReg, L1)",
+    "Elastic Net (LogReg, L1+L2)",
+    "XGBoost",
+    "Extra Trees",
+    "KNN"
+  ],
+  "best_model": {
+    "name": "AdaBoost",
+    "accuracy": {
+      "mean": 0.8371,
+      "std": 0.0072
+    },
+    "precision": {
+      "mean": 0.0513,
+      "std": 0.0028
+    },
+    "recall": {
+      "mean": 0.7869,
+      "std": 0.0503
+    },
+    "f1": {
+      "mean": 0.0964,
+      "std": 0.0053
+    },
+    "roc_auc": {
+      "mean": 0.8938,
+      "std": 0.0182
+    },
+    "pr_auc": {
+      "mean": 0.1877,
+      "std": 0.0312
+    },
+    "fit_time_s": {
+      "mean": 46.3662,
+      "std": 0.4862
+    }
+  },
+  "top3": {
+    "AdaBoost": {
+      "accuracy": {
+        "mean": 0.8371,
+        "std": 0.0072
+      },
+      "precision": {
+        "mean": 0.0513,
+        "std": 0.0028
+      },
+      "recall": {
+        "mean": 0.7869,
+        "std": 0.0503
+      },
+      "f1": {
+        "mean": 0.0964,
+        "std": 0.0053
+      },
+      "roc_auc": {
+        "mean": 0.8938,
+        "std": 0.0182
+      },
+      "pr_auc": {
+        "mean": 0.1877,
+        "std": 0.0312
+      },
+      "fit_time_s": {
+        "mean": 46.3662,
+        "std": 0.4862
+      }
+    },
+    "Gradient Boosting": {
+      "accuracy": {
+        "mean": 0.8691,
+        "std": 0.0045
+      },
+      "precision": {
+        "mean": 0.0588,
+        "std": 0.0044
+      },
+      "recall": {
+        "mean": 0.7235,
+        "std": 0.0577
+      },
+      "f1": {
+        "mean": 0.1087,
+        "std": 0.0082
+      },
+      "roc_auc": {
+        "mean": 0.8933,
+        "std": 0.017
+      },
+      "pr_auc": {
+        "mean": 0.1748,
+        "std": 0.0317
+      },
+      "fit_time_s": {
+        "mean": 102.1169,
+        "std": 23.2684
+      }
+    },
+    "LightGBM": {
+      "accuracy": {
+        "mean": 0.9527,
+        "std": 0.0016
+      },
+      "precision": {
+        "mean": 0.1125,
+        "std": 0.0098
+      },
+      "recall": {
+        "mean": 0.4785,
+        "std": 0.0567
+      },
+      "f1": {
+        "mean": 0.1821,
+        "std": 0.0165
+      },
+      "roc_auc": {
+        "mean": 0.8829,
+        "std": 0.0163
+      },
+      "pr_auc": {
+        "mean": 0.1635,
+        "std": 0.0295
+      },
+      "fit_time_s": {
+        "mean": 4.091,
+        "std": 0.4193
+      }
+    }
+  },
+  "best_by_f1": "Extra Trees",
+  "fastest_model": "KNN",
+  "slowest_model": "Lasso (LogReg, L1)",
+  "top10_features_best_model": [
+    "housing_status",
+    "device_os",
+    "name_email_similarity",
+    "has_other_cards",
+    "prev_address_months_count",
+    "date_of_birth_distinct_emails_4w",
+    "phone_home_valid",
+    "customer_age",
+    "device_distinct_emails_8w",
+    "income"
+  ],
+  "library_versions": {
+    "python": "3.13.15",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.4.1",
+    "lightgbm": "4.6.0",
+    "catboost": "1.2.10",
+    "matplotlib": "3.10.0",
+    "seaborn": "0.13.2"
+  }
+}
